@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { axiosInstance } from "../utils";
+import Input from "../components/Input";
+
 
 function Home() {
   const [recipes, setRecipes] = useState([]);
@@ -8,20 +10,18 @@ function Home() {
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        // Supabase REST API GET
-        const res = await axiosInstance.get("/recipes"); // barcha retseptlar
-        setRecipes(res.data); // ma'lumotni state-ga saqlash
+        const res = await axiosInstance.get("/recipes");
+        setRecipes(res.data);
       } catch (err) {
         console.error("Error fetching recipes:", err);
       } finally {
         setLoading(false);
       }
     };
-
     fetchRecipes();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div className="loading">Loading...</div>;
 
   return (
     <div className="home-container">
