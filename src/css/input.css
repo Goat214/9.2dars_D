@@ -1,0 +1,48 @@
+.search-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 320px;
+}
+
+.search-input {
+  display: flex;
+  width: 31rem;
+  padding: 10px 14px 10px 44px;
+  align-items: center;
+  border-radius: var(--spacing-125, 10px);
+  border: 1px solid var(--colors-neutral-300, #e0e6e3);
+  background: var(--colors-neutral-0, #fff);
+  color: var(--colors-neutral-900, #163A34);
+
+/* text-preset-7 */
+font-family:'Inter';
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: 150%; 
+letter-spacing: -0.3px;
+}
+
+.search-input:hover {
+    border: 1px solid var(--colors-neutral-900, #163A34);
+}
+.search-input:focus {
+  border-color: #2d6cdf; 
+}
+
+.search-input:focus{
+    border: 1px solid var(--colors-neutral-300, #E0E6E3);
+}
+
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  pointer-events: none; /* ikonka bosilmaydi */
+  opacity: 0.7;
+}

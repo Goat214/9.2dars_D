@@ -1,0 +1,19 @@
+.btn {
+  padding: 1.6rem 3.2rem;
+  font-size: var(--font-size-preset-5);
+  color: var(--color-neutral-0);
+  background-color: var(--color-neutral-900);
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+.btn:hover {
+  background-color: var(--color-neutral-600);
+}
+
+.btn:active {
+  background: var(--colors-neutral-900, #163a34);
+  box-shadow: 0 0 0 3px var(--colors-neutral-0, #fff),
+    0 0 0 5px var(--colors-neutral-900, #163a34);
+  background-color: var(--color-neutral-900);
+}
