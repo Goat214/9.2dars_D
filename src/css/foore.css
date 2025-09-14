@@ -1,0 +1,46 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.info {
+  color: var(--colors-neutral-900, #163a34);
+
+  /* text-preset-9 */
+  font-family: "Nunito Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 24px */
+  letter-spacing: -0.3px;
+}
+
+.socila__icon__wrapper {
+    display: flex; 
+    gap: 2.4rem;
+}
+
+.socila__icon {
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+
+@media screen and (max-width: 375px) {
+    .footer{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .info {
+        display: flex;
+        justify-content: center;
+    
+    }
+    .socila__icon__wrapper {
+        justify-content: center;
+        margin-bottom: 2.4rem; 
+    }
+}

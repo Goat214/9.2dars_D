@@ -21,7 +21,7 @@ export default function App() {
           path: "/about",
           element: <About />,
         },
-        {
+        { 
           path: "/recipe",
           element: <Recipe />,
         },

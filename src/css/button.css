@@ -1,10 +1,23 @@
-.btn {
-  padding: 1.6rem 3.2rem;
+.btn, .btnn {
+  padding: 1.2rem 1.6rem;
   font-size: var(--font-size-preset-5);
   color: var(--color-neutral-0);
   background-color: var(--color-neutral-900);
   cursor: pointer;
   border-radius: 1rem;
+  border: none;
+  height: 5.2rem;
+
+  color: var(--colors-neutral-0, #fff);
+  text-align: center;
+
+  /* text-preset-5 */
+  font-family: var( --font-primary);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 28px */
+  letter-spacing: -0.5px;
 }
 
 .btn:hover {

@@ -1,9 +1,10 @@
 @import "./css/button.css";
 @import "./css/fonts.css";
 @import "./css/variables.css";
-
+@import "./css/headre.css";
 @import "./css/input.css";
-
+@import "./css/foore.css";
+@import "./css/home.css";
 
 *,
 *::after,
@@ -23,6 +24,9 @@ ul,
 ol {
   list-style: none;
 }
+main{
+  flex-grow: 1;
+}
 
 a {
   text-decoration: none;
@@ -41,4 +45,14 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
+}
+
+.container{
+  width: 100%;
+  max-width: 121.2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+ margin-left: auto;
+ margin-right: auto;
+  
 }
