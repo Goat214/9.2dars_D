@@ -8,6 +8,11 @@
   align-items: center;
   justify-content: space-between;
 }
+.header {
+    position: relative;
+    z-index: 1000; /* boshqa elementlardan ustda bo‘lishi uchun */
+  }
+  
 .site_logo {
     width: 100%;
   max-width:  26rem;
@@ -60,10 +65,11 @@
 }
 hr {
   background-color: #e0e6e3;
-
-  height: 1px;
+ 
+  height: 10px;
   border: none;
   margin-bottom: 8rem;
+  margin: 0;
 }
 
 /* Modal */
@@ -161,6 +167,7 @@ hr {
         width: 20rem;
     }
     .modal__wrapper{
-        width: 34.3rem;
+        max-width: 34.3rem;
+        
     }
 }

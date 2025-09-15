@@ -51,6 +51,7 @@ function Header() {
           />
         </button>
         <button className="btn header__btn">Browse recipes</button>
+        
       </div>
       <hr />
 
