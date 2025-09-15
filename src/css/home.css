@@ -89,7 +89,7 @@
   position: absolute;
   top: 10%;
   left: 50%;
-  width: 125%; /* bu yerni picture dan kattaroq qilamiz */
+  width: 100%; /* bu yerni picture dan kattaroq qilamiz */
   height: auto;
   aspect-ratio: 16/9; /* yoki picture nisbatiga qarab */
   background: url("/images/pattern-squiggle-1.svg") no-repeat center;
