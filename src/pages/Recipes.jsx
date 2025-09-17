@@ -9,10 +9,13 @@ function Recipes() {
   const [recipes, setRecipes] = useState([]);
   const [filteredRecipes, setFilteredRecipes] = useState([]);
 
+  const [maxPrepTime, setMaxPrepTime] = useState(null);
+  const [maxCookTime, setMaxCookTime] = useState(null);
+
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        const res = await axiosInstance.get("/recipes"); // table nomi
+        const res = await axiosInstance.get("/recipes");
         setRecipes(res.data);
         setFilteredRecipes(res.data);
         setIsPending(false);
@@ -24,6 +27,22 @@ function Recipes() {
 
     fetchRecipes();
   }, []);
+
+  useEffect(() => {
+    let filtered = recipes;
+
+    if (maxPrepTime) {
+      const prep = parseInt(maxPrepTime);
+      filtered = filtered.filter((r) => r.prepMinutes <= prep);
+    }
+
+    if (maxCookTime) {
+      const cook = parseInt(maxCookTime);
+      filtered = filtered.filter((r) => r.cookMinutes <= cook);
+    }
+
+    setFilteredRecipes(filtered);
+  }, [maxPrepTime, maxCookTime, recipes]);
 
   return (
     <div className="">
@@ -44,58 +63,73 @@ function Recipes() {
               </p>
             </section>
 
-            <Input recipes={recipes} setFilteredRecipes={setFilteredRecipes} />
+            <section className="filter">
+            <div className="">
+                <DropdownFilter
+                  label="Max Prep Time"
+                  options={["0 minutes", "5 minutes", "10 minutes"]}
+                  onChange={(val) => setMaxPrepTime(val)}
+                />
+                <DropdownFilter
+                  label="Max Cook Time"
+                  options={[
+                    "0 minutes",
+                    "5 minutes",
+                    "10 minutes",
+                    "15 minutes",
+                    "20 minutes",
+                  ]}
+                  onChange={(val) => setMaxCookTime(val)}
+                />
+              </div>
 
-            <div className="p-10 flex gap-6">
-              <DropdownFilter
-                label="Max Prep Time"
-                options={["0 minutes", "5 minutes", "10 minutes"]}
+             
+
+              <div>
+              <Input
+                recipes={recipes}
+                setFilteredRecipes={setFilteredRecipes}
               />
-              <DropdownFilter
-                label="Max Cook Time"
-                options={[
-                  "0 minutes",
-                  "5 minutes",
-                  "10 minutes",
-                  "15 minutes",
-                  "20 minutes",
-                ]}
-              />
-            </div>
+              </div>
+            </section>
 
             <section className="recipes__list">
-              {filteredRecipes.map((recipe) => (
-                <div key={recipe.id} className="recipe__card">
-                  <img
-                    src={recipe.image}
-                    alt={recipe.title}
-                    className="recipe__img"
-                  />
-                  <h2 className="recipe__title">{recipe.title}</h2>
-                  <p className="recipe__desc">{recipe.overview}</p>
-                  <div className="recipe__info">
-                    <div className="recipe__f_wrapper">
-                      <span className="reciep__info__wrapper">
-                        <img src="../images/icon-servings.svg" alt="" />{" "}
-                        Servings: {recipe.servings}
-                      </span>
-                      <span className="reciep__info__wrapper">
-                        <img src="../images/icon-prep-time.svg" alt="" /> Prep:{" "}
-                        {recipe.prepMinutes} mins
-                      </span>
+              {filteredRecipes.length > 0 ? (
+                filteredRecipes.map((recipe) => (
+                  <div key={recipe.id} className="recipe__card">
+                    <img
+                      src={recipe.image}
+                      alt={recipe.title}
+                      className="recipe__img"
+                    />
+                    <h2 className="recipe__title">{recipe.title}</h2>
+                    <p className="recipe__desc">{recipe.overview}</p>
+                    <div className="recipe__info">
+                      <div className="recipe__f_wrapper">
+                        <span className="reciep__info__wrapper">
+                          <img src="../images/icon-servings.svg" alt="" />{" "}
+                          Servings: {recipe.servings}
+                        </span>
+                        <span className="reciep__info__wrapper">
+                          <img src="../images/icon-prep-time.svg" alt="" />{" "}
+                          Prep: {recipe.prepMinutes} mins
+                        </span>
+                      </div>
+                      <div className="recipe__s_wrapper">
+                        <span className="reciep__info__wrapper">
+                          <img src="../images/icon-cook-time.svg" alt="" />{" "}
+                          Cook: {recipe.cookMinutes} mins
+                        </span>
+                      </div>
                     </div>
-                    <div className="recipe__s_wrapper">
-                      <span className="reciep__info__wrapper">
-                        <img src="../images/icon-cook-time.svg" alt="" /> Cook:{" "}
-                        {recipe.cookMinutes} mins
-                      </span>
-                    </div>
+                    <Link to={`/recipes/${recipe.id}`} className="btn__view">
+                      View Recipe
+                    </Link>
                   </div>
-                  <Link to={`/recipes/${recipe.id}`} className="btn__view">
-                    View Recipe
-                  </Link>
-                </div>
-              ))}
+                ))
+              ) : (
+                <p>No recipes match your filter.</p>
+              )}
             </section>
           </div>
 

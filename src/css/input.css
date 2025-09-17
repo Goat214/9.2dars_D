@@ -2,7 +2,7 @@
   position: relative;
   display: inline-block;
   width: 100%;
-  max-width: 320px;
+  max-width: 32rem;
 }
 
 .search-input {
@@ -46,4 +46,18 @@ letter-spacing: -0.3px;
   height: 18px;
   pointer-events: none; /* ikonka bosilmaydi */
   opacity: 0.7;
+}
+@media screen and (max-width: 720px) {
+  .search-input{
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 375px) {
+  .search-container {
+    max-width: 34.3rem; 
+  }
+  .search-input{
+      max-width: 34.3rem;
+  }
 }

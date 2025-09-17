@@ -1,0 +1,136 @@
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  
+}
+
+.dropdown-btn {
+  display: flex;
+  padding: var(--spacing-125, 15px) var(--spacing-200, 16px);
+  justify-content: center;
+  
+  align-items: center;
+  gap: var(--spacing-100, 8px);
+  border-radius: var(--spacing-125, 10px);
+  border: 1px solid var(--colors-neutral-300, #e0e6e3);
+  background: var(--colors-neutral-0, #fff);
+
+  font-family: "Nunito Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 27px */
+  letter-spacing: -0.3px;
+}
+
+.dropdown-btn.active {
+    border-radius: var(--spacing-125, 10px);
+    border: 1px solid var(--colors-neutral-900, #163A34);
+    background: var(--colors-neutral-0, #FFF);
+}
+
+.dropdown-btn:hover{
+    border-radius: var(--spacing-125, 10px);
+border: 1px solid var(--colors-neutral-900, #163A34);
+background: var(--colors-neutral-0, #FFF);
+}
+.dropdown-menu {
+    
+  display: flex;
+  width: 240px;
+  padding: var(--spacing-100, 15px);
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  left: 124px;
+  top: 55px;
+  border-radius: var(--corner-radius-8, 8px);
+  border: 1px solid var(--colors-neutral-300, #e0e6e3);
+  background: var(--colors-neutral-0, #fff);
+  box-shadow: 0 12px 22px -12px var(--colors-neutral-300, #e0e6e3);
+}
+
+.dropdown-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #7b1fa2; /* binafsha */
+  margin-bottom: 6px;
+  font-family: "Nunito Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 30px */
+  letter-spacing: -0.4px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.option {
+  display: flex;
+  padding: var(--spacing-100, 8px);
+  align-items: center;
+  gap: var(--spacing-100, 8px);
+  align-self: stretch;
+  border-radius: var(--radius-8, 8px);
+  background: var(--bg-white-0, #fff);
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 27px */
+  letter-spacing: -0.3px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background: #f9f9f9;
+}
+
+.option input[type="radio"] {
+  margin-right: 8px;
+  accent-color: #2e7d32; /* radio knopka yashil */
+}
+.arrow{
+    margin-top: 10px;
+}
+
+.clear-btn {
+    color: var(--text-strong-950, #293241);
+
+    /* text-preset-9 */
+    font-family: "Nunito Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 24px */
+    letter-spacing: -0.3px;
+    background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+@media screen and (max-width: 720px) {
+    .dropdown {
+        display: block;
+        
+    }
+   .dropdown-btn{
+    width: 100%;
+    max-width: 250px;
+    
+    margin-right: auto;
+    margin-bottom: 1.2rem;
+   }
+}
+
+@media screen and (max-width: 375px) {
+    .dropdown-btn{
+        max-width: 34.3rem;
+    }
+}
