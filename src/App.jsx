@@ -1,10 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { About, Home, Recipe, Recipes } from "./pages";
-
 import MainLayout from "./layouts/MainLayout";
-
-// import { action, action as homeAction } from "./pages/Home";
 
 export default function App() {
   const routes = createBrowserRouter([
@@ -15,22 +12,22 @@ export default function App() {
         {
           index: true,
           element: <Home />,
-          // action: homeAction,
         },
         {
-          path: "/about",
+          path: "about",
           element: <About />,
         },
-        { 
-          path: "/recipe",
-          element: <Recipe />,
+        {
+          path: "recipes",
+          element: <Recipes />,
         },
         {
-          path: "/recipes",
-          element: <Recipes />,
+          path: "recipes/:id", // 🔑 dynamic route
+          element: <Recipe />,
         },
       ],
     },
   ]);
+
   return <RouterProvider router={routes} />;
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { axiosInstance } from "../utils";
 import Input from "../components/Input";
+import Cooking from "../components/Cooking";
 
 function Home() {
   const [recipes, setRecipes] = useState([]);
@@ -96,8 +97,9 @@ function Home() {
             </p>
           </li>
         </ul>
+        <hr />
       </section>
-      <hr />
+      
       <section className="container built">
         <div className="built__wrapper">
           <h2 className="built__title">Built for real life</h2>
@@ -120,11 +122,7 @@ function Home() {
         </div>
       </section>
       <section className="container ">
-      <div className="cooking">
-      <h2 className="cooking__title">Ready to cook smarter?</h2>
-        <p className="cooking__des">Hit the button, pick a recipe, and get dinner on the table—fast.</p>
-        <button className="btn">Browse recipes</button>
-      </div>
+        <Cooking/>
       </section>
     </div>
   );

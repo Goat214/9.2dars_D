@@ -7,7 +7,8 @@
 
 .search-input {
   display: flex;
-  width: 31rem;
+  width: 100%;
+  max-width: 31.5rem;
   padding: 10px 14px 10px 44px;
   align-items: center;
   border-radius: var(--spacing-125, 10px);

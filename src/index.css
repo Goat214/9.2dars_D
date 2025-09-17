@@ -5,6 +5,9 @@
 @import "./css/input.css";
 @import "./css/foore.css";
 @import "./css/home.css";
+@import "./css/about.css";
+@import "./css/recipes.css";
+@import "./css/recipe.css";
 
 *,
 *::after,
@@ -30,6 +33,9 @@ main{
 
 a {
   text-decoration: none;
+}
+img{
+  object-fit: cover;
 }
 
 body {

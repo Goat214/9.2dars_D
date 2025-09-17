@@ -184,12 +184,12 @@
 }
 
 hr {
-  background-color: #e0e6e3;
-
-  height: 2px;
-  border: none;
-  margin-bottom: 8rem;
-}
+    border: none;
+    border-top: 2px solid #e0e6e3; /* faqat yuqori border */
+    margin: 0 0 9.2rem 0;
+  }
+  
+  
 
 /*Will GET  end*/
 
